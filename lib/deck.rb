@@ -24,5 +24,10 @@ def high_ranking_cards
 
 end
 
+def remove_card
+
+  @cards.shift
+end
+
 
 end

@@ -54,7 +54,8 @@ def test_player_remove_card
   deck = Deck.new(card_set)
 
   player = Player.new('Clarisa', deck)
-assert_equal card1, player.deck[1]
+
+  assert_equal card1, player.deck.remove_card
 
   end
 

@@ -17,8 +17,6 @@ def has_lost?
 end
 end
 
-def remove_card
-  @deck
-end
+
 
 end
