@@ -2,12 +2,23 @@ require './lib/deck'
 require './lib/card'
 
 class Player
-  attr_reader :name, :player_deck
+  attr_reader :name, :deck
 
-def initialize(name, player_deck)
+def initialize(name, deck)
     @name = name
-    @player_deck = player_deck
+    @deck = deck
   end
 
+def has_lost?
+  if @deck == nil
+    true
+  else
+    false
+end
+end
+
+def remove_card
+  @deck
+end
 
 end
