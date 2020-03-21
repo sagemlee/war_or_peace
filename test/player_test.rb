@@ -58,5 +58,4 @@ def test_player_remove_card
   assert_equal card1, player.deck.remove_card
 
   end
-
 end
