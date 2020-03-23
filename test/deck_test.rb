@@ -51,23 +51,38 @@ def test_high_ranking_cards
 end
 
 def test_percent_high_ranking
-  skip
-  deck = Deck.new (card_set)
-  deck.percent_high_ranking
-  assert_equal "66%" , deck.percent_high_ranking
+  card1 = Card.new(:diamond, 'Queen', 12)
+  card2 = Card.new(:spade, '3', 3)
+  card3 = Card.new(:heart, 'Ace', 14)
+  card_set = [card1, card2, card3]
+
+  deck = Deck.new(card_set)
+
+  assert_equal 67 , deck.percent_high_ranking
 end
 
 def test_remove_card
-  skip
-  deck = Deck.new (card_set)
-  assert_equal ["card2","card3"] , deck.remove_card
+
+  card1 = Card.new(:diamond, 'Queen', 12)
+  card2 = Card.new(:spade, '3', 3)
+  card3 = Card.new(:heart, 'Ace', 14)
+  card_set = [card1, card2, card3]
+
+  deck = Deck.new(card_set)
+  assert_equal card1 , deck.remove_card
 end
 
 def test_add_card
   skip
-  deck = Deck.new (card_set)
-  assert_equal ["card2","card3","card4"], deck.add_card
-end
+  card1 = Card.new(:diamond, 'Queen', 12)
+  card2 = Card.new(:spade, '3', 3)
+  card3 = Card.new(:heart, 'Ace', 14)
+  card_set = [card1, card2, card3]
 
+  card4 = Card.new(:club, '5', 5)
+
+  deck = Deck.new (card_set)
+  assert_equal [card1, card2, card3, card4], deck.add_card(card4)
+end
 
 end
