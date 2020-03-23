@@ -62,14 +62,14 @@ def test_percent_high_ranking
 end
 
 def test_remove_card
-  
+
   card1 = Card.new(:diamond, 'Queen', 12)
   card2 = Card.new(:spade, '3', 3)
   card3 = Card.new(:heart, 'Ace', 14)
   card_set = [card1, card2, card3]
 
   deck = Deck.new(card_set)
-  assert_equal [card2, card3] , deck.remove_card
+  assert_equal card1 , deck.remove_card
 end
 
 def test_add_card

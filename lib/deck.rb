@@ -30,7 +30,7 @@ end
 
 def remove_card
   @cards.shift
-  @cards
+  
 end
 
 
