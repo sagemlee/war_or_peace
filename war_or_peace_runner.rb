@@ -69,13 +69,34 @@ standard_deck << card52 = Card.new(:club, 'King', 13)
 deck1 = Deck.new(standard_deck.shuffle)
 deck2 = Deck.new(standard_deck.shuffle)
 
+
 player1 = Player.new("Megan", deck1)
 player2 = Player.new("Aurora", deck2)
+
 turn = Turn.new(player1, player2)
+turn_count = 0
 
-game = Game.new
+loop do
+  turn.type
+  winner = turn.winner
+  turn.pile_cards
+  turn_count +=1
+  turn.award_spoils(winner)
+  if  player1.has_lost?
+    p "#{player2.name} has won the game!"
+    break
+  elsif player2.has_lost?
+     p "#{player1.name} has won the game!"
+     break
+  elsif turn_count == 1000000
+     p "DRAW"
+     break
+   end
+ end
 
-game.start
+
+
+# binding.pry
 
 
 

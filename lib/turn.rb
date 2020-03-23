@@ -26,6 +26,7 @@ def type
     :basic
   elsif (player1.deck.rank_of_card_at(0) == player2.deck.rank_of_card_at(0)) && (player1.deck.rank_of_card_at(1) == player2.deck.rank_of_card_at(1))
     :mutually_assured_destruction
+
   elsif player1.deck.rank_of_card_at(0) == player2.deck.rank_of_card_at(0)
     :war
   end
@@ -82,9 +83,10 @@ def pile_cards
 end
 
 def award_spoils(player)
-
-    @spoils_of_war.each do |card|
+  if player != "No Winner"
+      @spoils_of_war.each do |card|
       player.deck.cards << card
+    end
   end
   end
 

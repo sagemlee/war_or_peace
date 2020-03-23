@@ -5,6 +5,7 @@ require './lib/turn'
 
 class Game
 
+
   def initialize
 
 
@@ -16,24 +17,23 @@ class Game
 
   def start
 
-  
   turn_count = 0
-  loop do
+  # loop do
     turn.type
     winner = turn.winner
     turn.pile_cards
     turn.award_spoils(winner)
-    turn_count +=1
-    if  player1.haslost?
-      p "#{player1} has won the game!"
-      break
-    elsif player2.haslost?
-       p "#{player1} has won the game!"
-       break
-    elsif turn_count == 1000000
-       p "DRAW"
-       break
-     end
-     end
+    # turn_count +=1
+    # if  player1.haslost?
+    #   p "#{player1} has won the game!"
+    #   break
+    # elsif player2.haslost?
+    #    p "#{player1} has won the game!"
+    #    break
+    # elsif turn_count == 1000000
+    #    p "DRAW"
+    #    break
+    #  end
+    #  end
   end
 end
